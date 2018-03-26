@@ -15,6 +15,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 
+import java.util.List;
 import java.util.Objects;
 
 @SpringBootApplication
@@ -62,6 +63,11 @@ public class Application {
     @GetMapping(value="/getCustomerByName")
     public Customer getCustomer(@RequestParam("name") String customerName){
         return customerService.getCustomer(customerName);
+    }
+
+    @GetMapping(value="/all")
+    public List<Customer> getCustomers(){
+        return customerService.getCustomers();
     }
 
     @PutMapping("/update")

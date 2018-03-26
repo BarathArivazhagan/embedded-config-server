@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: embedded-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/BarathArivazhagan/config-server-repository.git
+        bootstrap: true
+
